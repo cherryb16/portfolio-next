@@ -14,9 +14,11 @@
   --color-sage: #5b6f4a;
   --color-field: #6b8e4a;
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-geist);
-  --font-mono: var(--font-mono);
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino,
+    "Book Antiqua", Georgia, serif;
+  --font-sans: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
 }
 
 @layer base {
