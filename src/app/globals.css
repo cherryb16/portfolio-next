@@ -26,9 +26,14 @@
     color-scheme: light;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
+    scroll-behavior: smooth;
   }
 
   body {
@@ -39,6 +44,28 @@
   ::selection {
     background-color: var(--color-rust);
     color: var(--color-paper);
+  }
+
+  a,
+  button {
+    touch-action: manipulation;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-rust);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
   }
 
   .font-display {
@@ -85,6 +112,7 @@
     font-variation-settings: "SOFT" 20, "WONK" 0, "opsz" 144;
     letter-spacing: -0.02em;
     line-height: 0.98;
+    text-wrap: balance;
   }
 
   .headline-italic {
@@ -119,5 +147,21 @@
     padding: 0.3rem 0.6rem 0 0;
     color: var(--color-rust);
     font-weight: 600;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 50;
+    transform: translateY(-160%);
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .skip-link:focus-visible {
+    transform: translateY(0);
   }
 }

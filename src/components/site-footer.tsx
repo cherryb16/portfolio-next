@@ -1,39 +1,32 @@
+import { portfolioLinks, siteMeta } from "@/content/portfolio";
+
 export function SiteFooter() {
   return (
     <footer className="rule-t mt-24 bg-paper">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-10">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
-          <div>
+      <div className="mx-auto max-w-[1400px] px-6 py-10 md:px-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
             <p className="font-display text-2xl leading-tight tracking-tight">
-              Let&rsquo;s compare notes.
+              Recruiter-friendly, product-minded, and built to hold up under follow-up questions.
             </p>
-            <p className="byline mt-2">
-              braydenmcherry@gmail.com · Utah · {new Date().getFullYear()}
+            <p className="mt-3 text-sm leading-7 text-ink-soft">
+              Based in {siteMeta.location}. Best initial proof set: Trade Insights Pro,
+              QB Translation, Ballard Center CRM, and ShadowRock analytics work.
             </p>
           </div>
-          <div className="flex gap-5 text-sm">
-            <a
-              className="text-ink-soft hover:text-rust transition-colors"
-              href="mailto:braydenmcherry@gmail.com"
-            >
-              Email
-            </a>
-            <a
-              className="text-ink-soft hover:text-rust transition-colors"
-              href="https://linkedin.com/in/braydencherry"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-            <a
-              className="text-ink-soft hover:text-rust transition-colors"
-              href="https://github.com/cherryb16"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
+
+          <div className="flex flex-wrap gap-5 text-sm">
+            {portfolioLinks.map((link) => (
+              <a
+                key={link.label}
+                className="text-ink-soft transition-colors hover:text-rust"
+                href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noreferrer" : undefined}
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
