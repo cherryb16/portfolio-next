@@ -49,13 +49,54 @@ export default function Home() {
         </aside>
       </section>
 
+      <section className="mt-16 grid grid-cols-12 gap-4 md:gap-6">
+        {[
+          {
+            title: "Start with the case",
+            body: "Read QB Translation first for a full strategy + analytics walkthrough.",
+            href: "/qb-translation",
+            cta: "Open case study",
+          },
+          {
+            title: "Scan the broader work",
+            body: "Use the project list below to see product, operations, and data work side by side.",
+            href: "#other-work",
+            cta: "Jump to projects",
+          },
+          {
+            title: "Contact for details",
+            body: "Ask for code, decks, or implementation notes on any project.",
+            href: "mailto:braydenmcherry@gmail.com",
+            cta: "Email Brayden",
+          },
+        ].map((item) => (
+          <article
+            key={item.title}
+            className="col-span-12 md:col-span-4 border border-rule bg-paper-deep/40 p-6"
+          >
+            <p className="kicker">Start here</p>
+            <h2 className="font-display text-2xl tracking-tight mt-3">
+              {item.title}
+            </h2>
+            <p className="mt-3 text-ink-soft leading-relaxed">{item.body}</p>
+            <a
+              href={item.href}
+              className="mt-5 inline-flex items-center gap-2 text-rust hover:text-rust-deep transition-colors"
+            >
+              {item.cta}
+              <span aria-hidden>→</span>
+            </a>
+          </article>
+        ))}
+      </section>
+
       <div className="mt-24 rule-b" />
 
       <FeaturedCase />
 
       <div className="mt-24 rule-b" />
 
-      <section className="mt-16">
+      <section className="mt-16" id="other-work">
         <div className="flex items-baseline justify-between">
           <div>
             <p className="kicker">On the desk</p>
