@@ -13,8 +13,8 @@ export default function AboutPage() {
         <div className="col-span-12 md:col-span-8">
           <p className="kicker">About</p>
           <h1 className="headline mt-5 text-[clamp(2.25rem,6vw,4.5rem)] font-semibold">
-            I build the
-            <span className="headline-italic text-rust"> decision layer </span>
+            I build the{" "}
+            <span className="headline-italic text-rust">decision layer</span>{" "}
             between raw data and real product moves.
           </h1>
           <p className="mt-6 text-lg text-ink-soft leading-relaxed max-w-2xl">
