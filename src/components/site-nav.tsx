@@ -14,18 +14,20 @@ export function SiteNav() {
   const resumeLink = portfolioLinks[0];
 
   return (
-    <header className="rule-b bg-paper/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 rule-b bg-paper/85 backdrop-blur-md">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <div className="flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 py-4 md:flex-row md:items-center md:justify-between">
           <Link href="/" className="group flex items-baseline gap-3">
-            <span className="font-display text-[1.45rem] font-semibold tracking-tight leading-none">
+            <span className="font-display text-[1.4rem] font-semibold tracking-tight leading-none">
               {siteMeta.name}
             </span>
-            <span className="byline hidden md:inline">{siteMeta.title}</span>
+            <span className="byline hidden md:inline normal-case tracking-normal">
+              {siteMeta.title}
+            </span>
           </Link>
 
-          <div className="flex flex-wrap items-center gap-3 md:gap-7">
-            <nav aria-label="Primary" className="flex items-center gap-6 text-sm">
+          <div className="flex flex-wrap items-center gap-3 md:gap-6">
+            <nav aria-label="Primary" className="flex items-center gap-5 text-sm">
               {NAV_ITEMS.map((item) => {
                 const active = item.match(pathname);
                 return (
@@ -34,7 +36,9 @@ export function SiteNav() {
                     href={item.href}
                     aria-current={active ? "page" : undefined}
                     className={`transition-colors ${
-                      active ? "text-ink" : "text-ink-soft hover:text-rust"
+                      active
+                        ? "text-ink"
+                        : "text-ink-soft hover:text-rust"
                     }`}
                   >
                     {item.label}
@@ -54,7 +58,7 @@ export function SiteNav() {
               </a>
               <a
                 href={resumeLink.href}
-                className="inline-flex items-center gap-2 bg-ink px-4 py-2 text-sm text-paper transition-colors hover:bg-rust"
+                className="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2 text-sm text-paper transition-colors hover:bg-rust"
               >
                 {resumeLink.label}
               </a>

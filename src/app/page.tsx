@@ -16,40 +16,43 @@ export default function Home() {
 
   return (
     <div className="mx-auto max-w-[1400px] px-6 py-12 md:px-10 md:py-20">
-      <section className="grid gap-10 md:grid-cols-[1.5fr_1fr]">
-        <div>
-          <p className="kicker">{siteMeta.heroKicker}</p>
-          <h1 className="headline mt-6 text-[clamp(3rem,8vw,6.6rem)] font-semibold">
-            {siteMeta.heroTitle}
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            {siteMeta.heroSummary}
-          </p>
-          <div className="mt-8">
-            <ProjectLinks links={portfolioLinks} />
+      <section className="relative overflow-hidden border-b border-rule pb-16">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_0%_0%,rgba(39,84,74,0.1),transparent_34%),radial-gradient(circle_at_88%_12%,rgba(36,51,73,0.08),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.62),rgba(255,255,255,0))]" />
+        <div className="grid gap-12 md:grid-cols-[1.65fr_0.9fr] md:items-end">
+          <div className="max-w-4xl">
+            <p className="kicker">{siteMeta.heroKicker}</p>
+            <h1 className="headline mt-6 text-[clamp(3.4rem,9vw,7.8rem)] font-semibold">
+              {siteMeta.heroTitle}
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ink-soft">
+              {siteMeta.heroSummary}
+            </p>
+            <div className="mt-10">
+              <ProjectLinks links={portfolioLinks} />
+            </div>
           </div>
-        </div>
 
-        <aside className="border-t border-rule pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">
-          <p className="kicker">What recruiters should see fast</p>
-          <ul className="mt-5 space-y-4 text-sm leading-7 text-ink-soft">
-            <li>Strongest builder story: Trade Insights Pro.</li>
-            <li>Strongest analytics story: QB Translation.</li>
-            <li>Strongest internal systems story: Ballard Center CRM.</li>
-            <li>Strongest business impact story: ShadowRock dashboards.</li>
-          </ul>
-          <p className="byline mt-6 normal-case tracking-normal text-muted">
-            Product judgment, analytics depth, and operating execution are the
-            through-line.
-          </p>
-        </aside>
+          <aside className="md:border-l md:border-rule md:pl-8">
+            <p className="kicker">Where I’m strongest</p>
+            <ul className="mt-5 space-y-4 text-sm leading-7 text-ink-soft">
+              <li>Trade Insights Pro proves product-builder instincts.</li>
+              <li>QB Translation proves analytical decision framing.</li>
+              <li>Ballard Center shows internal systems thinking.</li>
+              <li>ShadowRock shows business impact and stakeholder traction.</li>
+            </ul>
+            <p className="byline mt-7 normal-case tracking-normal text-muted">
+              Product judgment, analytics depth, and operating execution are the
+              through-line.
+            </p>
+          </aside>
+        </div>
       </section>
 
-      <section className="mt-16 grid gap-4 md:grid-cols-4">
+      <section className="mt-12 grid gap-5 border-b border-rule py-8 md:grid-cols-4">
         {heroMetrics.map((metric) => (
-          <article key={metric.label} className="border border-rule bg-paper-deep/35 p-5">
-            <p className="font-display text-4xl leading-none text-rust">{metric.value}</p>
-            <p className="mt-3 text-sm leading-6 text-ink-soft">{metric.label}</p>
+          <article key={metric.label} className="border-l border-rule pl-5 first:border-l-0 first:pl-0">
+            <p className="font-display text-[2.85rem] leading-none text-rust">{metric.value}</p>
+            <p className="mt-3 max-w-xs text-sm leading-6 text-ink-soft">{metric.label}</p>
             {metric.detail ? (
               <p className="byline mt-3 normal-case tracking-normal text-muted">
                 {metric.detail}
@@ -60,14 +63,14 @@ export default function Home() {
       </section>
 
       <section className="mt-24" id="selected-projects">
-        <div className="flex flex-col gap-4 border-b border-rule pb-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-4 border-b border-rule pb-7 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="kicker">Selected projects</p>
-            <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
+            <h2 className="section-cap mt-3 text-4xl md:text-[4.5rem]">
               Four proof points, each solving a different product problem.
             </h2>
           </div>
-          <p className="max-w-md text-sm leading-7 text-ink-soft">
+          <p className="max-w-md text-sm leading-7 text-ink-soft md:pb-2">
             The portfolio is intentionally balanced. No single case study has to
             carry the whole argument anymore.
           </p>
@@ -81,27 +84,30 @@ export default function Home() {
       </section>
 
       <section className="mt-24">
-        <div className="flex flex-col gap-4 border-b border-rule pb-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-4 border-b border-rule pb-7 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="kicker">Experience</p>
-            <h2 className="font-display mt-3 text-4xl tracking-tight md:text-5xl">
+            <h2 className="section-cap mt-3 text-4xl md:text-[4.3rem]">
               Built in consulting, internal systems, and operations environments.
             </h2>
           </div>
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 border-b border-ink pb-1 text-sm text-ink transition-colors hover:border-rust hover:text-rust"
+            className="inline-flex items-center gap-2 rounded-full border border-rule bg-white/70 px-4 py-2 text-sm text-ink transition-colors hover:border-rust hover:text-rust"
           >
             See full experience
             <span aria-hidden="true">→</span>
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
+        <div className="mt-8 grid gap-0 border-t border-rule md:grid-cols-2">
           {featuredExperience.map((entry) => (
-            <article key={`${entry.company}-${entry.role}`} className="border border-rule bg-paper-deep/30 p-6">
+            <article
+              key={`${entry.company}-${entry.role}`}
+              className="border-b border-rule py-7 md:pr-8 md:[&:nth-child(odd)]:border-r md:[&:nth-child(even)]:pl-8"
+            >
               <p className="kicker">{entry.company}</p>
-              <h3 className="mt-3 font-display text-2xl tracking-tight">{entry.role}</h3>
+              <h3 className="mt-3 section-cap text-[2rem]">{entry.role}</h3>
               <p className="byline mt-2 normal-case tracking-normal text-muted">
                 {entry.location} · {entry.period}
               </p>
@@ -112,11 +118,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-24 grid gap-8 border-t border-rule pt-10 md:grid-cols-3">
+      <section className="mt-24 grid gap-8 border-t border-rule pt-12 md:grid-cols-3">
         {capabilityBuckets.map((bucket) => (
           <div key={bucket.title}>
             <p className="kicker">{bucket.title}</p>
-            <ul className="mt-4 space-y-2 text-sm leading-7 text-ink-soft">
+            <ul className="mt-5 space-y-3 text-sm leading-7 text-ink-soft">
               {bucket.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -125,11 +131,11 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="mt-24 border-t border-rule pt-10">
+      <section className="mt-24 border-y border-rule py-12">
         <p className="kicker">Next step</p>
         <div className="mt-4 grid gap-8 md:grid-cols-[1.6fr_1fr] md:items-end">
           <div>
-            <h2 className="font-display text-4xl tracking-tight md:text-5xl">
+            <h2 className="section-cap text-4xl md:text-[4.5rem]">
               If the fit is product, analytics, or operations-heavy PM work, this
               portfolio is the short version of how I think.
             </h2>

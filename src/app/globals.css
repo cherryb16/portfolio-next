@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f7f2e9;
-  --color-paper-deep: #ede5d4;
-  --color-ink: #1a1614;
-  --color-ink-soft: #3b342d;
-  --color-muted: #8a827a;
-  --color-rule: #d9d2c5;
-  --color-rust: #b8422c;
-  --color-rust-deep: #8f2e1d;
-  --color-navy: #1f3a5f;
-  --color-gold: #c88f24;
-  --color-sage: #5b6f4a;
-  --color-field: #6b8e4a;
+  --color-paper: #f6f7f3;
+  --color-paper-deep: #ecefe7;
+  --color-ink: #111318;
+  --color-ink-soft: #3e4653;
+  --color-muted: #7b8392;
+  --color-rule: #d7dde4;
+  --color-rust: #27544a;
+  --color-rust-deep: #17372f;
+  --color-navy: #243349;
+  --color-gold: #967f53;
+  --color-sage: #627166;
+  --color-field: #7c8f81;
 
   --font-display: "Iowan Old Style", "Palatino Linotype", Palatino,
     "Book Antiqua", Georgia, serif;
@@ -39,6 +39,10 @@
   body {
     background-color: var(--color-paper);
     color: var(--color-ink);
+    background-image:
+      radial-gradient(circle at top left, rgba(39, 84, 74, 0.08), transparent 32%),
+      radial-gradient(circle at 85% 8%, rgba(36, 51, 73, 0.08), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0));
   }
 
   ::selection {
@@ -71,7 +75,7 @@
   .font-display {
     font-family: var(--font-display);
     font-feature-settings: "ss01";
-    font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 144;
+    font-variation-settings: "SOFT" 18, "WONK" 0, "opsz" 144;
   }
 
   .font-mono {
@@ -109,9 +113,9 @@
 
   .headline {
     font-family: var(--font-display);
-    font-variation-settings: "SOFT" 20, "WONK" 0, "opsz" 144;
-    letter-spacing: -0.02em;
-    line-height: 0.98;
+    font-variation-settings: "SOFT" 16, "WONK" 0, "opsz" 144;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
     text-wrap: balance;
   }
 
@@ -123,8 +127,8 @@
 
   .kicker {
     font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
+    font-size: 0.69rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--color-rust);
     font-weight: 500;
@@ -133,7 +137,7 @@
   .byline {
     font-family: var(--font-mono);
     font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-muted);
   }
@@ -147,6 +151,18 @@
     padding: 0.3rem 0.6rem 0 0;
     color: var(--color-rust);
     font-weight: 600;
+  }
+
+  .surface-soft {
+    background-color: color-mix(in srgb, var(--color-paper-deep) 58%, white);
+    backdrop-filter: blur(10px);
+  }
+
+  .section-cap {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    text-wrap: balance;
   }
 
   .skip-link {
