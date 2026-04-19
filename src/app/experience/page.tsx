@@ -56,12 +56,12 @@ export default function ExperiencePage() {
         <ExperienceList entries={experience} />
       </section>
 
-      <section className="mt-16 grid gap-8 md:grid-cols-[1.2fr_1fr_1fr]">
+      <section className="mt-16 grid gap-12 border-t border-rule pt-12 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <p className="kicker">Education</p>
           {education.map((entry) => (
-            <div key={entry.school} className="mt-4 border border-rule bg-paper-deep/30 p-6">
-              <h2 className="font-display text-2xl tracking-tight">{entry.school}</h2>
+            <div key={entry.school} className="mt-5 border-t border-rule pt-5">
+              <h2 className="section-cap text-[2rem]">{entry.school}</h2>
               <p className="mt-3 text-sm leading-7 text-ink-soft">
                 {entry.credential} · {entry.location} · {entry.period}
               </p>
@@ -77,7 +77,7 @@ export default function ExperiencePage() {
         {capabilityBuckets.map((bucket) => (
           <div key={bucket.title}>
             <p className="kicker">{bucket.title}</p>
-            <div className="mt-4 border border-rule bg-paper-deep/30 p-6">
+            <div className="mt-5 border-t border-rule pt-5">
               <ul className="space-y-2 text-sm leading-7 text-ink-soft">
                 {bucket.items.map((item) => (
                   <li key={item}>{item}</li>

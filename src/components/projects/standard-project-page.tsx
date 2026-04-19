@@ -36,9 +36,12 @@ export function StandardProjectPage({ project }: StandardProjectPageProps) {
         </aside>
       </header>
 
-      <section className="mt-10 grid gap-4 md:grid-cols-3">
+      <section className="mt-10 grid gap-5 border-b border-rule py-8 md:grid-cols-3">
         {project.metrics.map((metric) => (
-          <div key={metric.label} className="border border-rule bg-paper-deep/35 p-5">
+          <article
+            key={metric.label}
+            className="border-l border-rule pl-5 first:border-l-0 first:pl-0"
+          >
             <p className="font-display text-4xl leading-none text-rust">{metric.value}</p>
             <p className="mt-3 text-sm leading-6 text-ink-soft">{metric.label}</p>
             {metric.detail ? (
@@ -46,7 +49,7 @@ export function StandardProjectPage({ project }: StandardProjectPageProps) {
                 {metric.detail}
               </p>
             ) : null}
-          </div>
+          </article>
         ))}
       </section>
 

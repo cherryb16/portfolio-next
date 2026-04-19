@@ -11,8 +11,8 @@ export function ProjectLinks({ links }: ProjectLinksProps) {
       {links.map((link) => {
         const className =
           link.emphasis === "primary"
-            ? "inline-flex items-center gap-2 bg-ink px-4 py-3 text-sm text-paper transition-colors hover:bg-rust"
-            : "inline-flex items-center gap-2 border border-rule px-4 py-3 text-sm text-ink-soft transition-colors hover:border-rust hover:text-rust";
+            ? "inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm text-paper transition-colors hover:bg-rust"
+            : "inline-flex items-center gap-2 rounded-full border border-rule bg-white/70 px-5 py-3 text-sm text-ink-soft transition-colors hover:border-rust hover:bg-paper-deep/60 hover:text-rust";
 
         if (link.external || link.href.startsWith("mailto:") || link.href.endsWith(".pdf")) {
           return (
